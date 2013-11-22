@@ -17,7 +17,7 @@ public class EntityListener implements Listener {
 		this.instance = instance;
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onEntitySpawnEvent(CreatureSpawnEvent event) {
 		if(this.instance.getMobManager().getMobType(event.getEntityType()) == MobType.Passive) {
 			if(event.getSpawnReason() != SpawnReason.EGG && event.getSpawnReason() != SpawnReason.SPAWNER
