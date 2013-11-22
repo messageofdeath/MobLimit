@@ -21,7 +21,7 @@ public class EntityListener implements Listener {
 	public void onEntitySpawnEvent(CreatureSpawnEvent event) {
 		if(this.instance.getMobManager().getMobType(event.getEntityType()) == MobType.Passive) {
 			if(event.getSpawnReason() != SpawnReason.EGG && event.getSpawnReason() != SpawnReason.SPAWNER
-					&& event.getSpawnReason() != SpawnReason.SPAWNER_EGG) {
+					&& event.getSpawnReason() != SpawnReason.SPAWNER_EGG && event.getSpawnReason() != SpawnReason.BREEDING) {
 				event.setCancelled(true);
 			}
 		}
